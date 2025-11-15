@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Buitenworks</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css"></head>
+<body>
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a class="nav-left" href="index.html"><img src="assets/buitenworks-logo.png" class="logo" alt="Buitenworks"></a>
+    <div class="nav-center">
+      <a href="catalog.html">Catalog</a>
+      <a href="community.html">Community</a>
+      <a href="archives.html">Archives</a>
+      <a href="about.html">About</a>
+    </div>
+    <div class="nav-right">
+      <button class="lang-badge"><span class="flag"/> IDR</button>
+      <button id="cartBtn" class="ghost">Cart</button>
+      <button id="loginBtn" class="primary-outline">Login</button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <h1 class="hero-title">BUITENWORKS</h1>
+    <a class="hero-cta" href="catalog.html">Shop here</a>
+  </div>
+</header>
+
+<main class="container-main">
+  <h2>Featured</h2>
+  <div class="products-grid">
+    <div class="product-card"><img src="assets/prod1.jpg" alt=""><div class="product-title">Leather Crop Racing Jacket - Black</div></div>
+    <div class="product-card"><img src="assets/prod2.jpg" alt=""><div class="product-title">Leather Crop Racing Jacket - Red</div></div>
+    <div class="product-card"><img src="assets/prod3.jpg" alt=""><div class="product-title">Jersey Track Set - Black</div></div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="payments">Payment Method</div>
+    <div class="copyright">© 2025 Buitenworks demo</div>
+  </div>
+</footer>
+
+<!-- cart drawer -->
+<aside id="cartDrawer" class="cart-drawer" aria-hidden="true"><div class="cart-head"><strong>Cart</strong><button id="closeCart">✕</button></div><div class="cart-body">Your cart is empty.</div></aside>
+
+<!-- login modal -->
+<div class="modal" id="loginModal" aria-hidden="true">
+  <div class="modal-panel">
+    <button class="modal-close" id="closeLogin">✕</button>
+    <h3>Login</h3>
+    <form id="loginForm">
+      <label>Email</label><input type="email" id="email" required>
+      <label>Password</label><input type="password" id="password" required>
+      <button class="btn primary" type="submit">Login</button>
+      <p class="muted">Or <a href="account.html">create an account</a></p>
+    </form>
+  </div>
+</div>
+
+<script src="scripts.js"></script>
+</body>
+</html>
