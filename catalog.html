@@ -1,0 +1,60 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Catalog - Buitenworks</title><link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css"></head><body>
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a class="nav-left" href="index.html"><img src="assets/buitenworks-logo.png" class="logo" alt="Buitenworks"></a>
+    <div class="nav-center">
+      <a href="catalog.html" class="active">Catalog</a>
+      <a href="community.html">Community</a>
+      <a href="archives.html">Archives</a>
+      <a href="about.html">About</a>
+    </div>
+    <div class="nav-right">
+      <button class="lang-badge"><span class="flag"/> IDR</button>
+      <button id="cartBtn" class="ghost">Cart</button>
+      <button id="loginBtn" class="primary-outline">Login</button>
+    </div>
+  </div>
+</nav>
+
+<main class="container-main">
+  <div class="catalog-layout">
+    <aside class="catalog-filters">
+      <div class="filter-box">
+        <input placeholder="Search" class="search-input" />
+        <h4>Product Type</h4>
+        <label><input type="checkbox" checked/> All Products</label><br/>
+        <label><input type="checkbox"/> Featured Products</label>
+      </div>
+    </aside>
+    <section class="catalog-grid">
+      <h1>All Products</h1>
+      <div id="products" class="products-grid"></div>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner"><div class="payments">Payment Method</div><div class="copyright">© 2025 Buitenworks demo</div></div>
+</footer>
+
+<!-- cart and modal from index -->
+<aside id="cartDrawer" class="cart-drawer" aria-hidden="true"><div class="cart-head"><strong>Cart</strong><button id="closeCart">✕</button></div><div class="cart-body">Your cart is empty.</div></aside>
+<div class="modal" id="loginModal" aria-hidden="true"><div class="modal-panel"><button class="modal-close" id="closeLogin">✕</button><h3>Login</h3><form id="loginForm"><label>Email</label><input type="email" id="email" required><label>Password</label><input type="password" id="password" required><button class="btn primary" type="submit">Login</button><p class="muted">Or <a href="account.html">create an account</a></p></form></div></div>
+
+<script>
+// populate demo products (static placeholders similar to Shopee items)
+const demo = [
+  {title:"Leather Crop Racing Jacket - Black",price:"Rp 2,500,000",img:"assets/prod1.jpg"},
+  {title:"Leather Crop Racing Jacket - Red",price:"Rp 2,500,000",img:"assets/prod2.jpg"},
+  {title:"Jersey Track Set - Black",price:"Rp 2,099,000",img:"assets/prod3.jpg"},
+  {title:"Mystery Tee - Black",price:"Rp 145,000",img:"assets/prod4.jpg"}
+];
+const grid=document.getElementById('products');
+demo.forEach(p=>{
+  const card=document.createElement('article'); card.className='product-card';
+  card.innerHTML = `<div class="product-thumb"><img src="${p.img}" alt=""></div><div class="product-title">${p.title}</div><div class="product-price">${p.price}</div>`;
+  grid.appendChild(card);
+});
+</script>
+<script src="scripts.js"></script>
+</body></html>
