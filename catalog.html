@@ -1,0 +1,129 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Catalog - Buitenworks</title><link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css"></head><body>
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a class="nav-left" href="index.html"><img src="assets/buitenworks-logo.png" class="logo" alt="Buitenworks"></a>
+    <div class="nav-center">
+      <a href="catalog.html" class="active">Catalog</a>
+      <a href="community.html">Community</a>
+      <a href="archives.html">Archives</a>
+      <a href="about.html">About</a>
+    </div>
+    <div class="nav-right">
+      <button class="lang-badge"><span class="flag"/> IDR</button>
+      <button id="cartBtn" class="ghost">Cart</button>
+      <button id="loginBtn" class="primary-outline">Login</button>
+    </div>
+  </div>
+</nav>
+
+<main class="container-main">
+  <div class="catalog-layout">
+    <aside class="catalog-filters">
+      <div class="filter-box">
+        <input id="searchInput" placeholder="Search product" class="search-input" />
+        <h4>Product Type</h4>
+        <div class="filter-chips">
+          <button class="chip chip-active" data-type="all">All</button>
+          <button class="chip" data-type="longsleeve">Longsleeve</button>
+          <button class="chip" data-type="boxy">Boxy Tee</button>
+        </div>
+        <h4>Sort By</h4>
+        <select id="sortSelect" class="sort-select">
+          <option value="featured">Featured</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+        </select>
+      </div>
+    </aside>
+    <section class="catalog-grid">
+      <h1>All Products</h1>
+      <div id="products" class="products-grid"></div>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner"><div class="payments">Payment Method</div><div class="copyright">© 2025 Buitenworks development</div></div>
+</footer>
+
+
+
+</div>
+
+<script src="scripts.js"></script>
+<!-- global loader -->
+<div id="pageLoader" class="page-loader" aria-hidden="true">
+  <div class="loader-inner">
+    <img src="assets/buitenworks-logo.png" alt="Buitenworks" class="loader-logo">
+    <div class="loader-bar">
+      <div class="loader-bar-fill"></div>
+    </div>
+    <div class="loader-text">Loading experience...</div>
+  </div>
+</div>
+
+<!-- cart drawer -->
+<aside id="cartDrawer" class="cart-drawer" aria-hidden="true">
+  <div class="cart-head">
+    <div class="cart-head-title">Cart</div>
+    <button id="closeCart" class="cart-close-btn">✕</button>
+  </div>
+  <div class="cart-body">
+    <div id="cartEmpty" class="cart-empty">Your cart is empty.</div>
+    <div id="cartItems" class="cart-items"></div>
+  </div>
+  <div class="cart-footer">
+    <div class="cart-total-row">
+      <span>Total</span>
+      <span id="cartTotal">Rp 0</span>
+    </div>
+    <button id="checkoutBtn" class="btn primary">Checkout</button>
+    <button id="clearCartBtn" class="btn btn-outline">Clear Cart</button>
+  </div>
+</aside>
+
+<!-- auth modal -->
+<div class="modal" id="authModal" aria-hidden="true">
+  <div class="modal-panel auth-panel" role="dialog" aria-modal="true">
+    <button class="modal-close" id="closeAuth" aria-label="close">✕</button>
+    <div class="auth-tabs">
+      <button class="auth-tab active" data-mode="login">Login</button>
+      <button class="auth-tab" data-mode="signup">Sign Up</button>
+    </div>
+    <form id="loginForm" class="auth-form auth-form-login">
+      <label for="loginEmail">Email</label>
+      <input type="email" id="loginEmail" name="email" required>
+      <label for="loginPassword">Password</label>
+      <input type="password" id="loginPassword" name="password" required>
+      <button class="btn primary" type="submit">Login</button>
+    </form>
+    <form id="signupForm" class="auth-form auth-form-signup" style="display:none">
+      <label for="signupName">Name</label>
+      <input type="text" id="signupName" name="name" required>
+      <label for="signupEmail">Email</label>
+      <input type="email" id="signupEmail" name="email" required>
+      <label for="signupPassword">Password</label>
+      <input type="password" id="signupPassword" name="password" required>
+      <label for="signupBirthdate">Birthdate</label>
+      <input type="date" id="signupBirthdate" name="birthdate">
+      <button class="btn primary" type="submit">Create Account</button>
+    </form>
+    <div id="authError" class="auth-error"></div>
+  </div>
+</div>
+
+<!-- checkout modal -->
+<div class="modal" id="checkoutModal" aria-hidden="true">
+  <div class="modal-panel checkout-panel" role="dialog" aria-modal="true">
+    <button class="modal-close" id="closeCheckout" aria-label="close">✕</button>
+    <h3>Checkout Options</h3>
+    <div class="checkout-body">
+      <p>Your items will be saved to your order history. You can then continue to Shopee to complete payment.</p>
+    </div>
+    <div class="checkout-actions">
+      <button id="saveOrderBtn" class="btn btn-outline">Save Order Only</button>
+      <button id="saveAndGoBtn" class="btn primary">Save & Continue to Shopee</button>
+    </div>
+  </div>
+</div>
+</body></html>
