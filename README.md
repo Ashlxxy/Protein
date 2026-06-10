@@ -1,4 +1,4 @@
-# 🧶 Buitenwork
+# 🧶 Buitenworks
 
 > **Modern Fashion E-Commerce Prototype**
 > *Developed as part of "Tugas Proyek Teknologi Informasi"*
